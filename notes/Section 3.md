@@ -43,4 +43,23 @@ ReferenceError: name is not defined
     console.log(name);
 ```
 
+## 03.11 Importing npm Modules
 
+1. Init a npm package
+
+```console
+npm init
+```
+
+2. Install a npm package
+
+```text
+npm install <module-name>@<specific-version>
+
+examples: npm install validator@13.12.0
+```
+
+**Notes**
+
+- `node_module`: This folder contains all the code for the installed dependencies. It should not be manually edited.
+- `package-lock.json`: This file contains extra information that makes NPM faster and more secure. It lists the exact versions of all dependencies, their sources, and a SHA hash to ensure we get the same code if we reinstall the dependencies.
