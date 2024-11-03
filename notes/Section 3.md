@@ -63,3 +63,13 @@ examples: npm install validator@13.12.0
 
 - `node_module`: This folder contains all the code for the installed dependencies. It should not be manually edited.
 - `package-lock.json`: This file contains extra information that makes NPM faster and more secure. It lists the exact versions of all dependencies, their sources, and a SHA hash to ensure we get the same code if we reinstall the dependencies.
+
+## 03.12 Printing in color
+
+- The `node_modules` folder is where all the libraries (or packages) your Node.js app needs are stored. When your app needs to use one of these libraries, it looks in this folder to find it.
+If `node_modules` is missing, the Node.js app will be crash.
+
+- To recreate the `node_modules` folder, simply run `npm install`. This command will use the `package.json` and `package-lock.json` files to determine and install the **necessary dependencies** and their **versions**, rebuilding the `node_modules` folder from scratch.
+
+
+
