@@ -192,3 +192,48 @@ Adding a new note...
 ```
 
 When we execute the `add` command, the console prints out the message `Adding a new note...`, indicating that the `add` command **_handler_** has run successfully.
+
+### Extends yargs command with builder:
+
+**1. Defined app.js**
+
+```javascript
+yargs.command({
+  command: "add",
+  description: "Add a new note",
+  builder: {
+    title: {
+      describe: "Title of note",
+      demandOption: true,
+      type: "string",
+    },
+    body: {
+      describe: "Note content body",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: function (argv) {
+    console.log("Adding a new note...");
+    console.log("Title:", argv.title);
+    console.log("Body:", argv.body);
+  },
+});
+```
+
+**2. Execute `--help` command**
+
+```console
+AzureAD+MinhHo@LNV-PF4F8V7S  $ node app.js add --help
+app.js add
+
+Add a new note
+
+Options:
+  --help     Show help                                                 [boolean]
+  --version  Show version number                                       [boolean]
+  --title    Title of note                                   [string] [required]
+  --body     Note content body                               [string] [required]
+```
+
+As shown in console output of command above, options `--title` and `--body` are **string** and **required**. Cause we defined it in `builder` options as `demandOption: true, type: "string"`
