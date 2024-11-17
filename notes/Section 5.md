@@ -58,3 +58,32 @@ const addNote = (title, body) => {
 - **Continuing Execution**: Click the play button to resume script execution.
 
 > while `console.log` is simple and effective, the Node Debugger offers more flexibility for complex scenarios.
+
+## 05.27 Error Messages
+
+```javascript
+const saveNotes = (notes) => {
+  const dataJSON = JSON.stringify(notes);
+  fs.writeFileSync("./notes.json", dataJsON); // <--- Typo error here
+};
+```
+
+```console
+ReferenceError: dataJsON is not defined
+    at saveNotes (C:\Users\MinhHo\Workspace\Working\Learning\udemy\the-complete-node-js-developer\exercises\Section 4
+\04-24-reading-a-note\notes.js:22:36)
+    at Object.addNote (C:\Users\MinhHo\Workspace\Working\Learning\udemy\the-complete-node-js-developer\exercises\Sect
+ion 4\04-24-reading-a-note\notes.js:64:5)
+    at Object.handler (C:\Users\MinhHo\Workspace\Working\Learning\udemy\the-complete-node-js-developer\exercises\Sect
+ion 4\04-24-reading-a-note\app.js:20:17)
+```
+
+- **Error Type**: The error message indicates a `ReferenceError`.
+- **Error Details**: The message specifies that `dataJsON` is not defined.
+- **Stack Trace**: Provides a trace of function calls leading to the error.
+
+### Using the Stack Trace
+
+- **Top of the Trace**: Contains the most relevant information about the error.
+- **Function Calls**: Shows the sequence of function calls that led to the error.
+- **Node Internals**: The bottom of the trace contains less actionable information related to Node.js internals.
