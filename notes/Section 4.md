@@ -243,3 +243,48 @@ As shown in console output of command above, options `--title` and `--body` are 
 > JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax.  
 > **_Read more_**: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 
+## 04.21 Es6 Aside: Arrow Functions
+
+** 1. Using standard function**
+
+```javascript
+const event = {
+  name: "Birthday Party",
+  printGuestList: function () {
+    console.log(`Guest List for ${this.name}`);
+  },
+};
+
+event.printGuestList();
+```
+
+**Output**
+
+```console
+AzureAD+MinhHo@LNV-PF4F8V7S  $ node 2-arrow-function.js
+Guest List for Birthday Party
+```
+
+** 2. Using arrow functions **
+
+```javascript
+const event = {
+  name: "Birthday Party",
+  printGuestList: function () {
+    console.log(`Guest List for ${this.name}`);
+  },
+};
+
+event.printGuestList();
+```
+
+**Output**
+
+```console
+AzureAD+MinhHo@LNV-PF4F8V7S  $ node 2-arrow-function.js
+Guest List for undefined
+```
+
+> Note: Arrow function don't bind their own this value.
+
+In the second example, the arrow function causes the guest list to be printed as `undefined`. This happens because arrow functions do not have _their own `this` context_; instead, they inherit this from the **enclosing lexical scope**. As a result, the name property cannot be found, leading to the incorrect output.
