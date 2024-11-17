@@ -237,3 +237,9 @@ Options:
 ```
 
 As shown in console output of command above, options `--title` and `--body` are **string** and **required**. Cause we defined it in `builder` options as `demandOption: true, type: "string"`
+
+## 04.18 Storing data with JSON
+
+> JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax.  
+> **_Read more_**: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
+
